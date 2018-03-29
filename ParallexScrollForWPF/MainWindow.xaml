@@ -14,21 +14,21 @@
     </Window.Resources>
 
     <Grid>
-        <ScrollViewer x:Name="ParallexScrollViewer">
-            <StackPanel>
-                <local:ParallexScrollControl ParallexScrollSource="{Binding ElementName=ParallexScrollViewer}">
-                    <Image Height="200">
-                        <Image.Source>
-                            <BitmapImage UriSource="Assets/emptydataset_dataerror.png"/>
-                        </Image.Source>
-                        <Image.RenderTransform>
-                            <TranslateTransform x:Name="ParallexTargetTranslateTransform"/>
-                        </Image.RenderTransform>
-                    </Image>
-                </local:ParallexScrollControl>
+<ScrollViewer x:Name="ParallexScrollViewer">
+    <StackPanel>
+        <local:ParallexScrollControl ParallexScrollSource="{Binding ElementName=ParallexScrollViewer}">
+            <Image Height="200">
+                <Image.Source>
+                    <BitmapImage UriSource="Assets/test.png"/>
+                </Image.Source>
+                <Image.RenderTransform>
+                    <TranslateTransform x:Name="ParallexTargetTranslateTransform"/>
+                </Image.RenderTransform>
+            </Image>
+        </local:ParallexScrollControl>
 
-                <ItemsControl ItemsSource="{Binding Items}"/>
-            </StackPanel>
-        </ScrollViewer>
+        <ItemsControl ItemsSource="{Binding Items}"/>
+    </StackPanel>
+</ScrollViewer>
     </Grid>
 </Window>
