@@ -1,0 +1,34 @@
+﻿<Window x:Class="ParallexScrollForWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParallexScrollForWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{DynamicResource MainPageViewModel}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <local:MainPageViewModel x:Key="MainPageViewModel"/>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <ScrollViewer x:Name="ParallexScrollViewer">
+            <StackPanel>
+                <local:ParallexScrollControl ParallexScrollSource="{Binding ElementName=ParallexScrollViewer}">
+                    <Image Height="200">
+                        <Image.Source>
+                            <BitmapImage UriSource="Assets/emptydataset_dataerror.png"/>
+                        </Image.Source>
+                        <Image.RenderTransform>
+                            <TranslateTransform x:Name="ParallexTargetTranslateTransform"/>
+                        </Image.RenderTransform>
+                    </Image>
+                </local:ParallexScrollControl>
+
+                <ItemsControl ItemsSource="{Binding Items}"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
